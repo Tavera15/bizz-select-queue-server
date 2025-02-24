@@ -1,7 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const multer  = require('multer');
-const upload = multer();
+const upload = multer({
+    limits: {fieldSize: 25 * 1024 * 1024}
+});
 
 const QueueController = require("../Controllers/QueueController.js");
 
